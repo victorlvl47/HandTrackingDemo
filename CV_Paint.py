@@ -14,6 +14,9 @@ for imPath in myList:
     overlayList.append(image)
 print(len(overlayList))
 header = overlayList[0]
+# yellow #ffde59
+# rgb(255, 222, 89)
+drawColor = (89, 222, 255)
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 800)
@@ -36,7 +39,42 @@ while True:
 
         # check which fingers are up
         fingers = detector.fingersUp()
-        print(fingers)
+        # print(fingers)
+
+        # two fingers are up, selection mode
+        if fingers[1] and fingers[2]:
+            print("selection mode")
+            # color selection or eraser
+            if y1 < 122:
+                # select yellow
+                if 0<x1<175:
+                    header = overlayList[0]
+                    drawColor = (89, 222, 255)
+                # select red
+                elif 200 < x1 < 310:
+                    header = overlayList[1]
+                    # rgb(255, 22, 22)
+                    drawColor = (22, 22, 255)
+                # select blue
+                elif 350 < x1 < 550:
+                    header = overlayList[2]
+                    # rgb(0, 74, 173)
+                    drawColor = (173, 74, 0)
+                # select eraser
+                elif 590 < x1 < 800:
+                    header = overlayList[3]
+                    #
+                    drawColor = (255, 255, 255)
+
+            cv2.rectangle(img, (x1, y1 - 25), (x2, y2 + 25), drawColor, cv2.FILLED)
+            print("selection mode")
+
+        # index finger is up, drawing mode
+        if fingers[1] and fingers[2] == False:
+            cv2.circle(img, (x1, y1), 15, drawColor, cv2.FILLED)
+            print('drawing mode')
+
+
 
     # overlay the color selection
     img[0:122, 0:800] = header
