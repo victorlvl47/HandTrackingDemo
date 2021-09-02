@@ -41,11 +41,18 @@ should be really straightforward instead of using
 
 #### CV Paint Demo
 
+[![Hand Tracking Thumbnail](https://img.youtube.com/vi/0-b7QuKvly4/0.jpg)](https://www.youtube.com/watch?v=0-b7QuKvly4)
+
 A MS Paint like application but you use your hand
 as the cursor to paint and select colors and tools.
 
+###### Instructions
+* Open your hand to select colors and tools, close
+your hand except for the index finger to draw.
+
 ###### Setup
 * Activate your [virtual environment](https://docs.python.org/3/library/venv.html) for python3.
+
 
 ``` bash
 # Run the demo, type in command line
