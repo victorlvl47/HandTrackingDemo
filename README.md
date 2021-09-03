@@ -58,3 +58,18 @@ your hand except for the index finger to draw.
 # Run the demo, type in command line
 python CV_Paint.py
 ```
+
+#### Finger Counting Demo
+
+[![Finger Counting Thumbnail](https://img.youtube.com/vi/XuXzFIjtXOI/0.jpg)](https://www.youtube.com/watch?v=XuXzFIjtXOI)
+
+A hand tracking demo that displays how many fingers are up in the image.
+
+###### Setup
+* Activate your [virtual environment](https://docs.python.org/3/library/venv.html) for python3.
+
+
+``` bash
+# Run the demo, type in command line
+python FingerCounting.py
+```
